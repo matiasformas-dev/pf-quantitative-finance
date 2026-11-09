@@ -1,31 +1,44 @@
 # pf-quantitative-finance
-#========================================
+
 Programming In Finance Course Repo - UAI
-#========================================
 
-this is a project that i create due to a course in Adolfo Ibañez University.
+This project was created for a course at Adolfo Ibáñez University.
 
-Currently, this repository contains a simple Python script that downloads daily closing prices for three assets from Yahoo Finance and calculates basic risk statistics.
+## Current implementation
 
-What the script does:
-- Requests historical daily close prices for IVV, ILF and SOXX with `start='2024-01-01'` and `end='2026-09-30'`.
-- Uses yfinance to fetch the data.
-- Calculates daily returns with pct_change().
-- Calculates the variance-covariance matrix of the returns.
-- Prints the price dataframe, return dataframe and covariance matrix to the console.
+`main.py` is a simple portfolio-volatility script. It downloads daily closing prices for IVV, ILF, and SOXX from Yahoo Finance for the date range specified in the script (`2024-01-01` to `2026-09-30`) and then:
 
-This is not a portfolio optimizer, forecasting model, or a full analysis tool yet. The current implementation only prepares the data and computes the basic statistics shown above.
+- Calculates daily percentage returns.
+- Computes the covariance matrix of those returns.
+- Calculates portfolio variance using the fixed weights `[0.5, 0.3, 0.2]` and prints annualized volatility using 252 trading days per year.
+- Prints the downloaded prices, daily returns, covariance matrix, weights, and intermediate arrays to the console.
 
-Requirements:
+The script uses fixed tickers, dates, and weights. It does not provide a portfolio optimizer, forecasting model, user interface, or data persistence.
+
+The final comment in `main.py` refers to calculating a mean, but no mean calculation is implemented. Results are printed to the console; the script does not save them to a file.
+
+## Requirements
+
 - Python 3
 - pandas
 - numpy
 - yfinance
 - openpyxl
 
-To run it:
-1. Create and activate a virtual environment.
-2. Install dependencies with: pip3 install -r requirements.txt
-3. Run the script with: python3 main.py
+## Run
 
-The script relies on Yahoo Finance as the data source, so availability and data access depend on that service.
+1. Create and activate a virtual environment:
+   ```sh
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+2. Install dependencies:
+   ```sh
+   pip3 install -r requirements.txt
+   ```
+3. Run the script:
+   ```sh
+   python3 main.py
+   ```
+
+The script retrieves data from Yahoo Finance. Data availability and access therefore depend on that external service. The script was not run as part of this README update.
