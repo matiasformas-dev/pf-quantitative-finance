@@ -1,0 +1,5 @@
+## librerias necesarias para ejecutar el codigo
+pandas
+numpy
+yfinance
+openpyxl
