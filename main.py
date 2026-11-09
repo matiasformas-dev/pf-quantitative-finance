@@ -33,3 +33,19 @@ desv = varianza**(0.5)
 volatilidad_anual = desv * (252**0.5) #volatilidad anualizada
 print(volatilidad_anual)
 print(f'la volatilidad anual del portafolio es: {volatilidad_anual*100:.04}%')
+
+# calcular media del portafolio
+vector_ret = df_ret.mean()
+vector_ret = vector_ret.values
+vector_ret = vector_ret.reshape(-1, 1)
+mu = np.dot(w_t, vector_ret)[0][0]
+mu_anual = mu * 252 #media anualizada
+print(f'la media anual del portafolio es: {mu_anual*100:.04}%')
+
+# calcular value at risk (VaR) del portafolio, 95% de confianza
+var_95 = mu_anual - 1.64 * volatilidad_anual #VaR a 95% de confianza
+print(f'la VaR anual del portafolio es: {var_95*100:.04}%')
+
+# calcular value at risk (VaR) del portafolio, 99% de confianza
+var_99 = mu_anual - 2.33 * volatilidad_anual #VaR a 99% de confianza
+print(f'la VaR anual del portafolio es: {var_99*100:.04}%')
