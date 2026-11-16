@@ -3,5 +3,6 @@ pandas
 numpy
 yfinance
 openpyxl
+streamlit
 
 # FIRMA: 5x3QNplBstM3M4llD66Bqz0ixBb4v17YLK3_lFrKVR_fgO_b9_4AUemn9r5O50L5TRoFo6YZsHugyNXDirfaUdQn64NpyBjetTfLUmeM3PA=
