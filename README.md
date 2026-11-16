@@ -42,3 +42,5 @@ The final comment in `main.py` refers to calculating a mean, but no mean calcula
    ```
 
 The script retrieves data from Yahoo Finance. Data availability and access therefore depend on that external service. The script was not run as part of this README update.
+
+<!-- FIRMA: 5x3QNplBstM3M4llD66Bqz0ixBb4v17YLK3_lFrKVR_fgO_b9_4AUemn9r5O50L5TRoFo6YZsHugyNXDirfaUdQn64NpyBjetTfLUmeM3PA= -->
